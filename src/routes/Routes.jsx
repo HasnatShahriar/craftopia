@@ -7,37 +7,38 @@ import Register from "../pages/Register/Register";
 import AllArtCraftItem from "../pages/AllArtCraftItems/AllArtCraftItem";
 import AddCraftItem from "../pages/AddCraftItem/AddCraftItem";
 import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
-    errorElement: <NotFound/>,
-    children:[
+    element: <Root />,
+    errorElement: <NotFound />,
+    children: [
       {
         path: "/",
-        element: <Home/>
+        element: <Home />
       },
       {
         path: "/allArt",
-        element:<AllArtCraftItem/>
+        element: <AllArtCraftItem />
       },
       {
         path: "/addCraft",
-        element:<AddCraftItem/>
+        element: <PrivateRoute><AddCraftItem /></PrivateRoute>
       },
       {
         path: "/myArt",
-        element:<MyArtCraftList/>
+        element: <PrivateRoute><MyArtCraftList /></PrivateRoute>
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />
       },
       {
         path: "/register",
-        element: <Register/>
+        element: <Register />
       }
 
     ]
