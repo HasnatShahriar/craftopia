@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -39,16 +40,19 @@ const Register = () => {
     createUser(email, password)
       .then(result => {
         console.log(result.user)
+        setSuccess('User created successfully')
+        toast.success('User created successfully')
       })
       .catch(error => {
         console.error(error);
+        setRegisterError('User creation failed')
+        toast.error('User creation failed')
 
       })
   }
 
   return (
     <div>
-      <h3>this is register</h3>
       <div>
         <p className="text-2xl font-semibold text-center my-4">Please Register</p>
         <div className="md:w-3/4 lg:w-1/2 mx-auto border-2 rounded-2xl mb-10">
@@ -98,6 +102,7 @@ const Register = () => {
           <p className="text-center my-4">Already have an account <Link to='/login' className="text-blue-600 font-bold underline">Login</Link></p>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
