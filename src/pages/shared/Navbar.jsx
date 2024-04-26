@@ -1,10 +1,15 @@
 
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import { Tooltip } from "react-tooltip";
+import './Navbar.css'
 
 
 const Navbar = () => {
 
-  
+  const { user, logOut } = useContext(AuthContext)
+
   const navLinks = <div id="sidebar" className="flex flex-col md:flex-row lg:flex-row gap-2">
     <li><NavLink to='/' activeClassName="text-green-500 font-bold border-green-500 border-2 py-2">Home</NavLink></li>
     <li><NavLink to='/allArt'>All Art & Craft Items</NavLink></li>
@@ -12,6 +17,16 @@ const Navbar = () => {
     <li><NavLink to='/myArt'>My Art & Craft List</NavLink></li>
 
   </div>
+
+  const handelLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("User Logged Out Successfully");
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
 
   return (
     <div className="navbar bg-base-100">
@@ -32,8 +47,20 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-     
+        {
+          user ? <div className="flex">
+            <span ><img className="w-10 h-10 border-2 border-green-600 rounded-full" data-tooltip-id="userTooltip" src={user.photoURL} alt="" data-tip={user.displayName} /></span>
+            <a onClick={handelLogOut} className="btn btn-sm ml-6" href="">Log Out</a>
+          </div> :
+            <Link to='/login'><button className="btn btn-sm">Login</button></Link>
+        }
       </div>
+      <Tooltip id="userTooltip" place="bottom">
+        <span className="text-gray-700 bg-white p-2">
+          {user ? user.displayName : ""}
+        </span>
+
+      </Tooltip>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 #sidebar a.active {
-  color: green;
-  border: 2px solid green;
+  color: rgb(53, 35, 2);
+  border: 2px solid orange;
   font-weight: 700;
   background-color: transparent;
 }
