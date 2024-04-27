@@ -49,10 +49,14 @@ const Navbar = () => {
       <div className="navbar-end">
         {
           user ? <div className="flex">
-            <span ><img className="w-10 h-10 border-2 border-green-600 rounded-full" data-tooltip-id="userTooltip" src={user.photoURL} alt="" data-tip={user.displayName} /></span>
+            <span ><img className="w-10 h-10 border-2 border-green-600 rounded-full" data-tooltip-id="userTooltip" src={user.photoURL} alt="" data-tip={user.displayName} />
+            </span>
             <a onClick={handelLogOut} className="btn btn-sm ml-6" href="">Log Out</a>
           </div> :
+           <>
             <Link to='/login'><button className="btn btn-sm">Login</button></Link>
+            <Link to='/register'><button className="btn btn-sm ml-4">Register</button></Link>
+           </>
         }
       </div>
       <Tooltip id="userTooltip" place="bottom">
