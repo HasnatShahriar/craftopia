@@ -1,5 +1,9 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../providers/AuthProvider';
+
 const AddCraftItem = () => {
+  const {user} = useContext(AuthContext);
 
   const handleAddCraft = e =>{
     e.preventDefault();
@@ -13,7 +17,7 @@ const AddCraftItem = () => {
     const customization = form.customization.value;
     const processing = form.processing.value;
     const stock = form.stock.value;
-    const email = form.email.value;
+    const email = user.email;
     const name = form.name.value;
 
     const newCraft = {photo,item,subCategory,description,price,rating,customization,processing,stock,email,name}
@@ -139,7 +143,7 @@ const AddCraftItem = () => {
               <span className="label-text">User Email</span>
             </label>
             <label className="input-group">
-              <input type="text" name="email" placeholder="User Email" className="input input-bordered w-full" />
+              <input type="text" defaultValue={user.email} name="email" placeholder="User Email" className="input input-bordered w-full" />
             </label>
           </div>
         </div>
@@ -149,7 +153,7 @@ const AddCraftItem = () => {
             <span className="label-text">User Name</span>
           </label>
           <label className="input-group">
-            <input type="text" name="name" placeholder="User Name" className="input input-bordered w-full" />
+            <input type="text" defaultValue={user.displayName} name="name" placeholder="User Name" className="input input-bordered w-full" />
           </label>
         </div>
         <input type="submit" value="Add Coffee" className="btn btn-block btn-info mt-4" />
