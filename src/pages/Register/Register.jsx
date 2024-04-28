@@ -4,6 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 
 
@@ -42,6 +43,27 @@ const Register = () => {
         console.log(result.user)
         setSuccess('User created successfully')
         toast.success('User created successfully')
+
+        const user = {email};
+        fetch('http://localhost:5000/users',{
+          method: 'POST',
+          headers: {
+            'content-type' : 'application/json' 
+          },
+          body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if(data.insertedId){
+            Swal.fire({
+              title: 'Success!',
+              text: 'User Added Successfully',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            })
+          }
+        })
       })
       .catch(error => {
         console.error(error);
