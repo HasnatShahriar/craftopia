@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyArtCraftList = () => {
@@ -61,7 +62,7 @@ const MyArtCraftList = () => {
               <h2 className="card-title">{p.item}</h2>
               <p>{p.description}</p>
               <div className="card-actions">
-                <button className="btn m-2">Update</button>
+                <Link to={`/update/${p._id}`}><button className="btn m-2">Update</button></Link>
                 <button onClick={() => handleDelete(p._id)} className="btn m-2">Delete</button>
               </div>
             </div>

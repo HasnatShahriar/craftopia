@@ -156,7 +156,7 @@ const AddCraftItem = () => {
             <input type="text" defaultValue={user.displayName} name="name" placeholder="User Name" className="input input-bordered w-full" />
           </label>
         </div>
-        <input type="submit" value="Add Coffee" className="btn btn-block btn-info mt-4" />
+        <input type="submit" value="Add" className="btn btn-block btn-info mt-4" />
       </form>
     </div>
   );
