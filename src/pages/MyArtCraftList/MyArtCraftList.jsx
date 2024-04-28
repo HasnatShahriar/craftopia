@@ -5,6 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 const MyArtCraftList = () => {
   const { user } = useContext(AuthContext);
   const [item, setItem] = useState([]);
+  const [control,setControl] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/myList/${user?.email}`)
       .then(res => res.json())
@@ -12,7 +13,20 @@ const MyArtCraftList = () => {
         console.log(data);
         setItem(data);
       })
-  }, [user])
+  }, [user,control])
+
+  const handleDelete = id =>{
+    fetch(`http://localhost:5000/delete/${id}`,{
+      method: 'DELETE',
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if(data.deletedCount > 0){
+        setControl(!control)
+      }
+    })
+  }
 
   return (
     <div>
@@ -27,11 +41,8 @@ const MyArtCraftList = () => {
               <h2 className="card-title">{p.item}</h2>
               <p>{p.description}</p>
               <div className="card-actions">
-                {/* <div className="space-y-2 space-x-8">
-                  <Link to={`/crafts/${_id}`}>
-                    <button className="btn btn-primary">View Details</button>
-                  </Link>
-                </div> */}
+               <button className="btn m-2">Update</button>
+               <button onClick={()=>handleDelete(p._id)} className="btn m-2">Delete</button>
               </div>
             </div>
           </div>
