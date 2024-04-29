@@ -8,7 +8,7 @@ const MyArtCraftList = () => {
   const { user } = useContext(AuthContext);
   const [item, setItem] = useState([]);
   const [control, setControl] = useState(false);
-  const [filterOption, setFilterOption] = useState(""); // State variable for filter option
+  const [filterOption, setFilterOption] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:5000/myList/${user?.email}`)
