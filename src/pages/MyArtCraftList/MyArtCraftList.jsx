@@ -45,33 +45,39 @@ const MyArtCraftList = () => {
           })
       }
     });
-
-
   }
 
   return (
     <div>
-      <h2>my art & craft list page</h2>
-      {
-        item?.map((p, index) => <div key={index}>
-          <div className="card bg-base-100 shadow-xl">
-            <figure>
-              <img className="h-48 w-full" src={p.photo} alt={item} />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{p.item}</h2>
-              <p>{p.description}</p>
-              <div className="card-actions">
-                <Link to={`/update/${p._id}`}><button className="btn m-2">Update</button></Link>
-                <button onClick={() => handleDelete(p._id)} className="btn m-2">Delete</button>
+      <div className="min-h-[calc(100vh-124px)] mb-10">
+        <div className="flex flex-col gap-10">
+          {
+            item?.map((p, index) => <div key={index}>
+              <div className="card bg-base-100 shadow-xl">
+                <figure>
+                  <img className="h-96 w-full" src={p.photo} alt={item} />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">{p.item}</h2>
+                  <p><span className="font-semibold">Customization :</span> {p.customization}</p>
+                  <p><span className="font-semibold">Stock :</span> {p.stock}</p>
+                  <p><span className="font-semibold">Price :</span> {p.price}</p>
+                  <p><span className="font-semibold">Rating :</span> {p.rating}</p>
+                  <div className="card-actions mt-6">
+                    <Link to={`/update/${p._id}`}><button className="btn btn-sm">Update</button></Link>
+                    <button onClick={() => handleDelete(p._id)} className="btn btn-sm">Delete</button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-        </div>)
-      }
+            </div>)
+          }
+        </div>
+      </div>
     </div>
   );
 };
 
 export default MyArtCraftList;
+
+

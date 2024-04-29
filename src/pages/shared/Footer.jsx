@@ -81,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center text-gray-400">© 2024 Alpha Homes. All rights reserved.</div>
+      <div className="py-6 text-sm text-center text-gray-400">© 2024 Craftopia. All rights reserved.</div>
     </footer>
   );
 };
