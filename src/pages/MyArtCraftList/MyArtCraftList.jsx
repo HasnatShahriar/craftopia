@@ -58,6 +58,7 @@ const MyArtCraftList = () => {
     ? item.filter((item) => item.customization === filterOption)
     : item;
 
+
   return (
     <div>
       {/* Dropdown menu for filtering */}
@@ -102,3 +103,5 @@ const MyArtCraftList = () => {
 };
 
 export default MyArtCraftList;
+
+
