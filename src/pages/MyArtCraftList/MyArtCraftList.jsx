@@ -8,6 +8,8 @@ const MyArtCraftList = () => {
   const { user } = useContext(AuthContext);
   const [item, setItem] = useState([]);
   const [control, setControl] = useState(false);
+  const [filterOption, setFilterOption] = useState(""); // State variable for filter option
+
   useEffect(() => {
     fetch(`http://localhost:5000/myList/${user?.email}`)
       .then(res => res.json())
@@ -47,12 +49,34 @@ const MyArtCraftList = () => {
     });
   }
 
+  const handleFilterChange = (e) => {
+    setFilterOption(e.target.value); // Update filter option when dropdown value changes
+  };
+
+  // Filter items based on selected filter option
+  const filteredItems = filterOption
+    ? item.filter((item) => item.customization === filterOption)
+    : item;
+
   return (
     <div>
+      {/* Dropdown menu for filtering */}
+      <div className="flex justify-end mb-4">
+        <select
+          value={filterOption}
+          onChange={handleFilterChange}
+          className="p-2 border rounded-md"
+        >
+          <option value="">Filter by Customization</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
       <div className="min-h-[calc(100vh-124px)] mb-10">
         <div className="flex flex-col gap-10">
           {
-            item?.map((p, index) => <div key={index}>
+            filteredItems?.map((p, index) => <div key={index}>
               <div className="card bg-base-100 shadow-xl">
                 <figure>
                   <img className="h-96 w-full" src={p.photo} alt={item} />
@@ -69,7 +93,6 @@ const MyArtCraftList = () => {
                   </div>
                 </div>
               </div>
-
             </div>)
           }
         </div>
@@ -79,5 +102,3 @@ const MyArtCraftList = () => {
 };
 
 export default MyArtCraftList;
-
-
