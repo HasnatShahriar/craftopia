@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 const CraftItem = ({ craft }) => {
@@ -8,9 +12,9 @@ const CraftItem = ({ craft }) => {
   return ( 
       <div className="card bg-base-100 shadow-xl">
         <figure>
-          <img className="h-48 w-full" src={photo} alt='' />
+          <img data-aos="zoom-in" data-aos-duration="500" className="h-48 w-full" src={photo} alt='' />
         </figure>
-        <div className="card-body">
+        <div  data-aos="zoom-in-up" data-aos-duration="500" className="card-body">
           <h2 className="card-title">{item}</h2>
           <p>{description}</p>
           <div className=" my-4">
@@ -24,5 +28,12 @@ const CraftItem = ({ craft }) => {
       </div> 
   );
 };
+
+
+CraftItem.propTypes = {
+  craft: PropTypes.object.isRequired
+}
+
+
 
 export default CraftItem;
