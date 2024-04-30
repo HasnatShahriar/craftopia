@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../providers/AuthProvider';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiFillGoogleCircle } from 'react-icons/ai';
 import { SiGithub } from 'react-icons/si';
 
@@ -12,6 +12,10 @@ const Login = () => {
   const [success, setSuccess] = useState('');
   const [loginError, setLoginError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log('Location in the login page', location);
+
 
   const handleLogin = e => {
     e.preventDefault();
@@ -30,6 +34,9 @@ const Login = () => {
         console.log(result.user);
         setSuccess('User login successfully')
         toast.success('User login successfully')
+
+        // navigate after login
+        navigate(location?.state ? location.state : '/')
       })
       .catch(error => {
         console.error(error);
@@ -46,6 +53,9 @@ const Login = () => {
         setUser(result.user)
         setSuccess('User login successfully')
         toast.success('User login successfully')
+
+        // navigate after login
+        navigate(location?.state ? location.state : '/')
       })
       .catch(error => {
         console.error(error);
@@ -62,6 +72,9 @@ const Login = () => {
         setUser(result.user);
         setSuccess('User login successfully')
         toast.success('User login successfully')
+
+        // navigate after login
+        navigate(location?.state ? location.state : '/')
       })
       .catch(error => {
         console.error(error);

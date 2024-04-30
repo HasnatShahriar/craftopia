@@ -5,6 +5,7 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 
 
@@ -13,7 +14,7 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState('');
   const [success, setSuccess] = useState('');
-  const [showPassword,setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = e => {
     e.preventDefault();
@@ -44,26 +45,34 @@ const Register = () => {
         setSuccess('User created successfully')
         toast.success('User created successfully')
 
-        const user = {email};
-        fetch('http://localhost:5000/users',{
+           // update profile
+           updateProfile(result.user, {
+            displayName: name,
+            photoURL: photo,
+          })
+            .then(() => console.log('Profile Updated'))
+            .catch()
+
+        const user = { email };
+        fetch('http://localhost:5000/users', {
           method: 'POST',
           headers: {
-            'content-type' : 'application/json' 
+            'content-type': 'application/json'
           },
           body: JSON.stringify(user)
         })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          if(data.insertedId){
-            Swal.fire({
-              title: 'Success!',
-              text: 'User Added Successfully',
-              icon: 'success',
-              confirmButtonText: 'Cool'
-            })
-          }
-        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire({
+                title: 'Success!',
+                text: 'User Added Successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+            }
+          })
       })
       .catch(error => {
         console.error(error);
@@ -102,12 +111,11 @@ const Register = () => {
                 <span className="label-text">Password</span>
               </label>
               <input type={showPassword ? 'text' : 'password'} name="password" placeholder="Password" className="input input-bordered" required />
-            <span className="absolute bottom-3 right-2 text-2xl" onClick={() => setShowPassword(!showPassword)}>
-              {
-                showPassword ? <IoMdEyeOff /> : <IoMdEye />
-              }
-            </span>
-              {/* <input type="password" name="password" placeholder="Password" className="input input-bordered" /> */}
+              <span className="absolute bottom-3 right-2 text-2xl" onClick={() => setShowPassword(!showPassword)}>
+                {
+                  showPassword ? <IoMdEyeOff /> : <IoMdEye />
+                }
+              </span>
 
             </div>
 
@@ -116,15 +124,15 @@ const Register = () => {
             </div>
           </form>
           {
-          registerError && <p className="text-red-600 ml-8">{registerError}</p>
-        }
-        {
-          success && <p className="text-green-500 ml-8">{success}</p>
-        }
+            registerError && <p className="text-red-600 ml-8">{registerError}</p>
+          }
+          {
+            success && <p className="text-green-500 ml-8">{success}</p>
+          }
           <p className="text-center my-4">Already have an account <Link to='/login' className="text-blue-600 font-bold underline">Login</Link></p>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };
