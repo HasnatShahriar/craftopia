@@ -11,7 +11,7 @@ const MyArtCraftList = () => {
   const [filterOption, setFilterOption] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myList/${user?.email}`)
+    fetch(`https://craftopia-server-two.vercel.app/myList/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -30,7 +30,7 @@ const MyArtCraftList = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://craftopia-server-two.vercel.app/delete/${id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

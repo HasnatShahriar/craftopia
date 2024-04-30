@@ -96,7 +96,7 @@ const Login = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-primary">LOGIN</button>
+              <button className="btn w-full px-8 py-3 font-semibold border rounded dark:border-gray-800 dark:text-gray-800 bg-orange-400 text-white ">LOGIN</button>
             </div>
             <p className="text-center my-6">---------  Login with social accounts  ---------</p>
             <div className="flex justify-evenly">

@@ -21,21 +21,21 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/crafts')
+        loader: () => fetch('https://craftopia-server-two.vercel.app/crafts')
       },
       {
         path: "/crafts/:id",
         element: <CraftDetails />,
-        loader: ({params}) => fetch(`http://localhost:5000/crafts/${params.id}`)
+        loader: ({ params }) => fetch(`https://craftopia-server-two.vercel.app/crafts/${params.id}`)
       },
       {
         path: "/update/:id",
-        element: <Update/>
+        element: <Update />
       },
       {
         path: "/allArt",
         element: <AllArtCraftItem />,
-        loader: () => fetch('http://localhost:5000/crafts')
+        loader: () => fetch('https://craftopia-server-two.vercel.app/crafts')
       },
       {
         path: "/addCraft",

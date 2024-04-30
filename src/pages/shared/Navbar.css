@@ -1,6 +1,6 @@
 #sidebar a.active {
-  color: rgb(108, 108, 224);
-  border: 2px solid blue;
+  color: rgb(71, 71, 231);
+  border: 2px solid rgb(236, 162, 25);
   font-weight: 700;
   background-color: transparent;
 }

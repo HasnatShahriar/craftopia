@@ -55,7 +55,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Craftopia</a>
+        <a className="btn btn-ghost text-xl text-blue-600 font-extrabold">Craftopia</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -65,13 +65,13 @@ const Navbar = () => {
       <div className="navbar-end">
         {
           user ? <div className="flex">
-            <span ><img className="w-10 h-10 border-2 border-green-600 rounded-full" data-tooltip-id="userTooltip" src={user.photoURL} alt="" data-tip={user.displayName} />
+            <span ><img className="w-10 h-10 border-2 border-blue-600 rounded-full" data-tooltip-id="userTooltip" src={user.photoURL} alt="" data-tip={user.displayName} />
             </span>
-            <a onClick={handelLogOut} className="btn btn-sm ml-6" href="">Log Out</a>
+            <a onClick={handelLogOut} className="btn btn-sm font-bold hover:border-2 hover:border-orange-400 hover:text-blue-800 ml-6" href="">Log Out</a>
           </div> :
-            <>
-              <Link to='/login'><button className="btn btn-sm">Login</button></Link>
-              <Link to='/register'><button className="btn btn-sm ml-4">Register</button></Link>
+            <> 
+              <Link to='/login'><button className="btn btn-sm font-bold hover:border-2 hover:border-orange-400 hover:text-blue-800">Login</button></Link>
+              <Link to='/register'><button className="btn btn-sm font-bold hover:border-2 hover:border-orange-400 hover:text-blue-800 ml-4">Register</button></Link>
             </>
         }
       </div>

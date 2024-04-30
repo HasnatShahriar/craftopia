@@ -10,8 +10,8 @@ const AllArtCraftItem = () => {
       <table className="table">
         {/* head */}
         <thead>
-          <tr className="text-xl font-bold">
-            <th>Sl</th>
+          <tr className="text-lg font-bold">
+            <th>No</th>
             <th>Name</th>
             <th>Subcategory</th>
             <th>Price</th>
@@ -29,7 +29,7 @@ const AllArtCraftItem = () => {
               <td>{craft.rating}</td>
               <td>
                 <Link to={`/crafts/${craft._id}`}>
-                  <button className="btn btn-primary">View Details</button>
+                  <button className="btn btn-link">View Details</button>
                 </Link>
               </td>
             </tr>)

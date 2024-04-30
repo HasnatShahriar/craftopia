@@ -25,7 +25,7 @@ const AddCraftItem = () => {
     console.log(newCraft);
 
     // send data to the server
-    fetch('http://localhost:5000/crafts', {
+    fetch('https://craftopia-server-two.vercel.app/crafts', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -47,14 +47,14 @@ const AddCraftItem = () => {
   }
 
   return (
-    <div className="bg-blue-100 p-24 my-10">
-      <h2 className="text-3xl font-extrabold text-center">Add Craft Item</h2>
+    <div className="bg-blue-50 p-24 my-10">
+      <h2 className="text-3xl font-extrabold text-center mb-10 text-blue-600">Add Craft Item</h2>
       <form onSubmit={handleAddCraft}>
         {/* form image & item_name */}
         <div className="md:flex ">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Photo</span>
+              <span className="label-text font-semibold">Photo</span>
             </label>
             <label className="input-group">
               <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
@@ -62,7 +62,7 @@ const AddCraftItem = () => {
           </div>
           <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
-              <span className="label-text">Item Name</span>
+              <span className="label-text font-semibold">Item Name</span>
             </label>
             <label className="input-group">
               <input type="text" name="item" placeholder="Item Name" className="input input-bordered w-full" />
@@ -73,19 +73,20 @@ const AddCraftItem = () => {
         <div className="md:flex ">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Subcategory Name</span>
+              <span className="label-text font-semibold">Subcategory Name</span>
             </label>
             <select className="input" name="subCategory">
               <option value="Landscape Painting">Landscape Painting</option>
               <option value="Portrait Drawing">Portrait Drawing</option>
               <option value="WaterColour Painting">Watercolour Painting</option>
+              <option value="Oil Painting">Oil Painting</option>
               <option value="Charcoal Sketching">Charcoal Sketching</option>
               <option value="Cartoon Drawing">Cartoon Drawing</option>
             </select>
           </div>
           <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
-              <span className="label-text">Short Description</span>
+              <span className="label-text font-semibold">Short Description</span>
             </label>
             <label className="input-group">
               <input type="text" name="description" placeholder="Short Description" className="input input-bordered w-full" />
@@ -96,7 +97,7 @@ const AddCraftItem = () => {
         <div className="md:flex ">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Price</span>
+              <span className="label-text font-semibold">Price</span>
             </label>
             <label className="input-group">
               <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
@@ -104,7 +105,7 @@ const AddCraftItem = () => {
           </div>
           <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
-              <span className="label-text">Rating</span>
+              <span className="label-text font-semibold">Rating</span>
             </label>
             <label className="input-group">
               <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
@@ -115,7 +116,7 @@ const AddCraftItem = () => {
         <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Customization</span>
+              <span className="label-text font-semibold">Customization</span>
             </label>
             <select className="input" name="customization">
               <option value="Yes">Yes</option>
@@ -124,7 +125,7 @@ const AddCraftItem = () => {
           </div>
           <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
-              <span className="label-text">Processing Time</span>
+              <span className="label-text font-semibold">Processing Time</span>
             </label>
             <label className="input-group">
               <input type="text" name="processing" placeholder="Processing Time" className="input input-bordered w-full" />
@@ -135,7 +136,7 @@ const AddCraftItem = () => {
         <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Stock Status</span>
+              <span className="label-text font-semibold">Stock Status</span>
             </label>
             <select className="input input-border" name="stock">
               <option value="In Stock">In Stock</option>
@@ -144,7 +145,7 @@ const AddCraftItem = () => {
           </div>
           <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
-              <span className="label-text">User Email</span>
+              <span className="label-text font-semibold">User Email</span>
             </label>
             <label className="input-group">
               <input type="text" defaultValue={user.email} name="email" placeholder="User Email" className="input input-bordered w-full" />
@@ -154,13 +155,13 @@ const AddCraftItem = () => {
         {/* user name */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">User Name</span>
+            <span className="label-text font-semibold">User Name</span>
           </label>
           <label className="input-group">
             <input type="text" defaultValue={user.displayName} name="name" placeholder="User Name" className="input input-bordered w-full" />
           </label>
         </div>
-        <input type="submit" value="Add" className="btn btn-block btn-info mt-4" />
+        <input type="submit" value="Add" className="btn btn-block bg-blue-600 text-white mt-16" />
       </form>
     </div>
   );

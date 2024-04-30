@@ -1,3 +1,31 @@
+**Craftopia**
+
+**Website URL:** [Visit Craftopia Website](https://craftopia2024.netlify.app/)
+
+**Category: Painting and Drawing**
+
+**Features:**
+- Diverse Collection: Explore a vast collection of paintings and drawings curated from talented artists worldwide.
+- Customization Options: Personalize your art purchase with customizable options, including size, framing, and medium.
+- Expert Guidance: Access resources and tutorials to enhance your painting and drawing skills, with tips from experienced artists.
+- Community Engagement: Connect with fellow art enthusiasts, share your creations, and participate in contests and challenges.
+- Secure Transactions: Shop with confidence knowing that your transactions are securely processed, with multiple payment options available.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

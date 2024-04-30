@@ -1,3 +1,4 @@
+import logo from '../../assets/logo.png'
 
 const Footer = () => {
   return (
@@ -7,10 +8,13 @@ const Footer = () => {
           <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 
             <div className="flex flex-col gap-6">
-              <span className="self-center text-2xl font-semibold">Craftopia</span>
-              <span className="text-sm"> 
-                Level-4, 34, Mannan Plaza, Khilkhet, Dhaka. 
-              </span>
+              <div className='flex gap-2 items-center justify-center'>
+                <span><img className='w-8 h-8' src={logo} alt="Website Logo" /></span>
+                <span className="self-center text-2xl font-semibold">Craftopia</span>
+              </div>
+              <div className="text-sm">
+                Level-4, 34, Mannan Plaza, Khilkhet, Dhaka.
+              </div>
             </div>
 
 

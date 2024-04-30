@@ -10,7 +10,7 @@ const CraftDetails = () => {
   return (
     <div>
       <div className="card  bg-base-100 shadow-xl my-10">
-        <figure><img className='w-full h-96' src={photo} alt="Estate" /></figure>
+        <figure><img className='w-full h-96' src={photo} alt="" /></figure>
         <div className="card-body">
           <h2 className="card-title">{item}</h2>
           <p><span className='font-semibold'>Subcategory Name : </span>{subCategory}</p>
