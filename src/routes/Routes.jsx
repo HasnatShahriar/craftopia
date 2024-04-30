@@ -12,6 +12,7 @@ import CraftDetails from "../components/CraftDetails";
 import Update from "../components/Update";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",

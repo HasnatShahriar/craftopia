@@ -10,7 +10,7 @@ const Update = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/singleProduct/${id}`)
+    fetch(`https://craftopia-server-two.vercel.app/singleProduct/${id}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data)
@@ -36,7 +36,7 @@ const Update = () => {
     const updatedCraft = { photo, item, subCategory, description, price, rating, customization, processing, stock }
     console.log(updatedCraft);
 
-    fetch(`http://localhost:5000/updateProduct/${id}`, {
+    fetch(`https://craftopia-server-two.vercel.app/updateProduct/${id}`, {
       method: "PUT",
       headers: {
         'content-type': 'application/json'

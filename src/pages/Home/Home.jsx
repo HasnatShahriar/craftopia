@@ -12,7 +12,7 @@ const Home = () => {
   const crafts = useLoaderData();
   return (
     <div>
-      <Banner />
+      <Banner />   
       <h1 className="text-3xl font-bold text-center mt-8">Check Out Our {''}
         <span style={{ color: 'blue', fontWeight: 'bold' }}>
           {/* Style will be inherited from the parent element */}
