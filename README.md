@@ -3,8 +3,8 @@
 **Website URL:** [Visit Craftopia Website](https://craftopia2024.netlify.app/)
 
 ## About
+Discover a rich array of paintings and drawings by artists worldwide. Tailor your art choices, benefit from expert insights, connect with fellow enthusiasts, and browse securely for a fulfilling artistic experience.
 
-TasteTracker is your ultimate destination for exploring culinary delights, discovering new eateries, and sharing your gastronomic adventures with fellow food enthusiasts.
 ### Major Features
 1. **Diverse Collection**
    - Explore a vast collection of paintings and drawings curated from talented artists worldwide. This feature allows users to discover unique and inspiring artworks from various styles and genres.
