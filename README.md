@@ -11,24 +11,17 @@
 - Community Engagement: Connect with fellow art enthusiasts, share your creations, and participate in contests and challenges.
 - Secure Transactions: Shop with confidence knowing that your transactions are securely processed, with multiple payment options available.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Used Technologies:
+- **Frontend**: React, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: Firebase
+- **Deployment**: Netlify
 
 
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
