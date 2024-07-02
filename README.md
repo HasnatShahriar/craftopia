@@ -18,6 +18,13 @@
 - **Authentication**: Firebase
 - **Deployment**: Netlify
 
+## Steps to Clone and Run Locally
+1. **Clone the Repository**: `git clone <repository-url>`
+2. **Navigate to the Project Directory**: `cd craftopia`
+3. **Install Dependencies**: `npm install`
+4. **Set Up Environment Variables**: Create a `.env` file with necessary environment variables.
+5. **Run the Server**: `npm run dev`
+
 
 # React + Vite
 
