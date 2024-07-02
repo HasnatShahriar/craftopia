@@ -9,7 +9,7 @@
 - Customization Options: Personalize your art purchase with customizable options, including size, framing, and medium.
 - Expert Guidance: Access resources and tutorials to enhance your painting and drawing skills, with tips from experienced artists.
 - Community Engagement: Connect with fellow art enthusiasts, share your creations, and participate in contests and challenges.
-- Secure Transactions: Shop with confidence knowing that your transactions are securely processed, with multiple payment options available.
+- Secure Browsing: Browse and shop with confidence knowing that our platform prioritizes secure browsing and data protection.
 
 ## Used Technologies:
 - **Frontend**: React, Tailwind CSS
